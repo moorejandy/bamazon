@@ -88,6 +88,7 @@ function runSearch() {
           console.log("Perfect. We will get to work filling that order for you!");
           console.log("Your total cost of " + amount + " " + res[0].product_name + " is $" + totalCost);
           connection.query("UPDATE products SET stock_quantity = " + (res[0].stock_quantity -  amount) + " WHERE item_id = " + itemWanted);
+          
         } else {
           console.log("I'm sorry we don't have enough of " + res[0].product_name + "in stock to complete your order :( ");
           showInventory();
